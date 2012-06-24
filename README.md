@@ -31,6 +31,11 @@ There ain't no configuration so stop your whining.
 The gem uses debug-level logging, so any Rails environment
 with debug-level logging will include the whiny validation messages.
 
+But if you're using Bundler, I recommend you put the
+`gem 'whiny_validation'` statement inside
+`group :development, :test do`. Then it will only be loaded
+into development and test.
+
 ## Contributing
 
 1. Fork it
