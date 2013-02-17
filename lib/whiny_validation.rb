@@ -4,7 +4,7 @@ module WhinyValidation
   extend ActiveSupport::Concern
 
   included do
-    after_validation :whiny_validation, :if => proc { |m| m.errors.present? }
+    after_validation :whiny_validation, :if => proc { |model| model.errors.present? }
   end
 
   def whiny_validation
@@ -15,11 +15,13 @@ module WhinyValidation
 
   class LogSubscriber < ActiveSupport::LogSubscriber
     def validation_failed(event)
-      name = color("Validation failed", YELLOW, true)
-      object = event.payload[:object]
-      error_messages = color(event.payload[:error_messages].map{|m|"    => #{m}"}.join("\n"), YELLOW)
+      debug do
+        name = color("Validation failed", YELLOW, true)
+        object = event.payload[:object]
+        error_messages = color(event.payload[:error_messages].map{|message|"    => #{message}"}.join("\n"), YELLOW)
 
-      debug "  #{name}  #{object.inspect}\n#{error_messages}"
+        "  #{name}  #{object.inspect}\n#{error_messages}"
+      end
     end
   end
 end
