@@ -20,6 +20,12 @@ to understand why a model didn't save.
 
 ![Whiny Validation](whiny_validation.png)
 
+## Compatibility
+
+Ruby 1.9.3 and above.
+
+Rails 3.2 and above.
+
 ## Installation
 
 Add this line to your application's Gemfile:
@@ -41,9 +47,17 @@ log for "Validation failed."
 
 ## Configuration
 
-There ain't no configuration so stop your whining.
-The gem uses debug-level logging, so any Rails environment
+By default, the gem uses debug-level logging, so any Rails environment
 with debug-level logging will include the whiny validation messages.
+
+You can change the log level like so:
+
+```ruby
+# config/initializers/whiny_validation.rb
+WhinyValidation.configure do |config|
+  config.log_level = :info
+end
+```
 
 ## Contributing
 

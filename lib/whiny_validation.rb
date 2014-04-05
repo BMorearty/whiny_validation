@@ -1,4 +1,5 @@
 require "whiny_validation/version"
+require "whiny_validation/configuration"
 
 module WhinyValidation
   extend ActiveSupport::Concern
@@ -15,7 +16,7 @@ module WhinyValidation
 
   class LogSubscriber < ActiveSupport::LogSubscriber
     def validation_failed(event)
-      debug do
+      send(WhinyValidation.configuration.log_level) do
         name = color("Validation failed", YELLOW, true)
         object = event.payload[:object]
         error_messages = color(event.payload[:error_messages].map{|message|"    => #{message}"}.join("\n"), YELLOW)
