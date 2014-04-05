@@ -18,7 +18,7 @@ stands out nicely if your terminal background is dark.
 It can be useful in development and especially in test mode,
 to understand why a model didn't save.
 
-![Whiny Validation](whiny_validation.png)
+![Whiny Validation](whiny_validation.gif)
 
 ## Compatibility
 
