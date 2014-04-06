@@ -25,9 +25,9 @@ module WhinyValidation
       end
     end
   end
-end
 
-WhinyValidation::LogSubscriber.attach_to :whiny_validation
+  WhinyValidation::LogSubscriber.attach_to :whiny_validation
+end
 
 module ActiveRecord
   class Base
