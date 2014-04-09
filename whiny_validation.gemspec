@@ -6,7 +6,7 @@ Gem::Specification.new do |gem|
   gem.email         = ["brian@morearty.org"]
   gem.description   = %q{When an ActiveRecord model won't save because it's invalid, this gem writes the validation error messages to the log.}
   gem.summary       = %q{Write ActiveRecord validation error messages to the log}
-  gem.homepage      = ""
+  gem.homepage      = "https://github.com/BMorearty/whiny_validation"
 
   gem.files         = `git ls-files`.split($\)
   gem.executables   = gem.files.grep(%r{^bin/}).map{ |f| File.basename(f) }
