@@ -59,6 +59,10 @@ WhinyValidation.configure do |config|
 end
 ```
 
+## Tests
+
+Quit your whining.
+
 ## Contributing
 
 1. Fork it
