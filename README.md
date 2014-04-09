@@ -66,6 +66,27 @@ end
 
 Quit your whining.
 
+## FAQ
+
+**Q**: I use Test::Unit because I hate RSpec. Does it work with Test::Unit?<br>
+**A**: Yes. Quit your whining.
+
+**Q**: I use RSpec because I hate Test::Unit. Does it work with RSpec?<br>
+**A**: Yes. Quit your whining.
+
+**Q**: I use ...<br>
+**A**: Yes. It is independent of the test framework you use. Quit your whining.
+
+**Q**: Why not log to the console in addition to the log file? That would make it more obvious that a test is failing.<br>
+**A**: Because some tests intentionally pass invalid input. You wouldn't want to see those in the console. Quit your whining.
+
+**Q**: Why not raise an error in tests when input is invalid? That would make it more obvious that a test is failing.<br>
+**A**: See previous answer. Quit your whining.
+
+**Q**: I don't want to see validation errors in my production log. Users make mistakes and that shouldn't go in my log.<br>
+**A**: This gem logs at the `debug` level by default. If you're using `debug` in production and still don't want to see
+   this gem's output, put it in a group in your Gemfile. Quit your whining.
+
 ## Contributing
 
 1. Fork it
