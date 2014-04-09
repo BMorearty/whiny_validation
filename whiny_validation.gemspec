@@ -14,5 +14,9 @@ Gem::Specification.new do |gem|
   gem.name          = "whiny_validation"
   gem.require_paths = ["lib"]
   gem.version       = WhinyValidation::VERSION
+
+  gem.add_dependency 'activesupport'
+  gem.add_dependency 'activerecord'
+
   gem.add_development_dependency 'rake'
 end
