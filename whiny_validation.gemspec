@@ -16,7 +16,7 @@ Gem::Specification.new do |gem|
   gem.version       = WhinyValidation::VERSION
 
   gem.add_dependency 'activesupport'
-  gem.add_dependency 'activerecord'
+  gem.add_dependency 'activemodel'
 
   gem.add_development_dependency 'rake'
 end

@@ -1,3 +1,6 @@
+require "active_support/concern"
+require "active_support/notifications"
+require "active_support/log_subscriber"
 require "whiny_validation/version"
 require "whiny_validation/configuration"
 
@@ -33,4 +36,4 @@ module ActiveRecord
   class Base
     include WhinyValidation
   end
-end
+end if defined? ActiveRecord
