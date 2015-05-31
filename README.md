@@ -62,6 +62,25 @@ WhinyValidation.configure do |config|
 end
 ```
 
+### ActiveRecord
+
+```ruby
+# config/initializers/whiny_validation.rb
+module ActiveRecord
+  class Base
+    include WhinyValidation
+  end
+end
+```
+
+### Mongoid
+
+```ruby
+class MyModel
+  include WhinyValidation
+end
+```
+
 ## Tests
 
 Quit your whining.
