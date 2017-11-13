@@ -1,15 +1,15 @@
 require 'test_helper'
 
-class Person
-  include ActiveModel::Model
-  include ActiveModel::Validations::Callbacks
-  include WhinyValidation
-  attr_accessor :name
-
-  validates :name, presence: true
-end
-
 class WhinyValidationTest < ActiveSupport::TestCase
+  class Person
+    include ActiveModel::Model
+    include ActiveModel::Validations::Callbacks
+    include WhinyValidation
+
+    attr_accessor :name
+    validates_presence_of :name
+  end
+
   setup do
     @io = StringIO.new
     ActiveSupport::LogSubscriber.logger = Logger.new @io
