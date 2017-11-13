@@ -6,10 +6,10 @@ to figure it out.
 
 WhinyValidation to the rescue.
 
-When an ActiveRecord model won't save because it's invalid,
+When an ActiveRecord/ActiveModel model won't save because it's invalid,
 this gem writes the validation error messages to the log.
 
-The log shows all the attributes of the ActiveRecord object
+The log shows all the attributes of the ActiveRecord/ActiveModel object
 that failed, along with the error message.
 
 Validation errors are shown in an attractive yellow, which
@@ -25,7 +25,7 @@ post on I Like Stuff.](http://ilikestuffblog.com/2014/04/09/whiny-validation/)
 
 ## Compatibility
 
-Ruby 1.9.3 and above.
+Ruby 2.0 and above.
 
 Rails 3.2 and above.
 
@@ -76,6 +76,10 @@ Quit your whining.
 
 **Q**: I use ...<br>
 **A**: Yes. It is independent of the test framework you use. Quit your whining.
+
+**Q**: I use ActiveModel but not ActiveRecord. Can I use this gem?<br>
+**A**: Yes. Now the gem works with any ActiveModel-compatible
+    framework. Quit your whining.
 
 **Q**: Why not log to the console in addition to the log file? That would make it more obvious that a test is failing.<br>
 **A**: Because some tests intentionally pass invalid input. You wouldn't want to see those in the console. Quit your whining.
