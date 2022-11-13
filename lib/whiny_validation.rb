@@ -32,8 +32,10 @@ module WhinyValidation
   WhinyValidation::LogSubscriber.attach_to :whiny_validation
 end
 
-module ActiveRecord
-  class Base
-    include WhinyValidation
+if defined?(ActiveRecord)
+  # ActiveRecord is dependent on ActiveSupport so we are good
+  # with calling ActiveSupport
+  ActiveSupport.on_load(:active_record) do
+    ActiveRecord::Base.send(:include, WhinyValidation)
   end
-end if defined? ActiveRecord
+end
