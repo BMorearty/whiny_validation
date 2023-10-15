@@ -18,9 +18,17 @@ module WhinyValidation
   end
 
   class LogSubscriber < ActiveSupport::LogSubscriber
+    def color_mode_options
+      if ActiveSupport.gem_version < Gem::Version.new("7.1.0")
+        true
+      else
+        { bold: true }
+      end
+    end
+
     def validation_failed(event)
       send(WhinyValidation.configuration.log_level) do
-        name = color("Validation failed", YELLOW, true)
+        name = color("Validation failed", YELLOW, color_mode_options)
         object = event.payload[:object]
         error_messages = color(event.payload[:error_messages].map{|message|"    => #{message}"}.join("\n"), YELLOW)
 
