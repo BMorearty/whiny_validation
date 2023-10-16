@@ -18,9 +18,6 @@ stands out nicely if your terminal background is dark.
 It can be useful in development and especially in test mode,
 to understand why a model didn't save.
 
-[Read more in this blog
-post on I Like Stuff.](http://ilikestuffblog.com/2014/04/09/whiny-validation/)
-
 ![Whiny Validation](whiny_validation.gif)
 
 ## Compatibility
